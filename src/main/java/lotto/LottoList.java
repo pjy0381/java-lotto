@@ -1,7 +1,6 @@
 package lotto;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class LottoList {
@@ -34,4 +33,15 @@ public class LottoList {
         return lottoList;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(lottoList.size()).append("개 구매하셨습니다.");
+
+        lottoList.stream().map(Lotto::getNumbers)
+                .forEach(integers -> sb.append("\n").append(integers));
+
+        return sb.toString();
+    }
 }

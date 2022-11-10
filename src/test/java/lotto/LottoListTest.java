@@ -25,5 +25,31 @@ class LottoListTest {
         assertThat(result.getLottoList().size()).isEqualTo(9);
     }
 
+    @Test
+    void createLottoListToStringBy0() {
+        LottoList result = new LottoList(0);
+        String resultString = "0개 구매하셨습니다.";
+
+        assertThat(resultString).isEqualTo(result.toString());
+    }
+
+    @Test
+    void createLottoListToStringBy1() {
+        LottoList result = new LottoList(1000);
+        String resultString = "1개 구매하셨습니다."
+                + "\n" + result.getLottoList().get(0).getNumbers();
+
+        assertThat(resultString).isEqualTo(result.toString());
+    }
+
+    @Test
+    void createLottoListToStringBy2() {
+        LottoList result = new LottoList(2000);
+        String resultString = "2개 구매하셨습니다."
+                + "\n" + result.getLottoList().get(0).getNumbers()
+                + "\n" + result.getLottoList().get(1).getNumbers();
+
+        assertThat(resultString).isEqualTo(result.toString());
+    }
 
 }
