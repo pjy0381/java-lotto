@@ -29,7 +29,7 @@ public class LottoList {
 
     private void validate(int money) {
         if (money % 1000 != 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("[ERROR]");
         }
     }
 

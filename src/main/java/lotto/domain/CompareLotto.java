@@ -15,6 +15,19 @@ public class CompareLotto {
                 .forEach(lotto -> addRankMap(lotto.getNumbers(), lotto_1st, bonusNumbers));
     }
 
+    @Override
+    public String toString() {
+        return "당첨 통계"
+                + "\n" + "---"
+                + "\n" + Rank.fifth.getComment() + " - " + rankMap.get(Rank.fifth) + "개"
+                + "\n" + Rank.fourth.getComment() + " - " + rankMap.get(Rank.fourth) + "개"
+                + "\n" + Rank.third.getComment() + " - " + rankMap.get(Rank.third) + "개"
+                + "\n" + Rank.second.getComment() + " - " + rankMap.get(Rank.second) + "개"
+                + "\n" + Rank.first.getComment() + " - " + rankMap.get(Rank.first) + "개"
+                + "\n" + calculateYield();
+    }
+
+
     private Map<Rank, Integer> createRankMap() {
         HashMap<Rank, Integer> rankMap = new HashMap<>();
 
@@ -52,17 +65,6 @@ public class CompareLotto {
         return count;
     }
 
-    @Override
-    public String toString() {
-        return "당첨 통계"
-                + "\n" + "---"
-                + "\n" + Rank.fifth.getComment() + " - " + rankMap.get(Rank.fifth) + "개"
-                + "\n" + Rank.fourth.getComment() + " - " + rankMap.get(Rank.fourth) + "개"
-                + "\n" + Rank.third.getComment() + " - " + rankMap.get(Rank.third) + "개"
-                + "\n" + Rank.second.getComment() + " - " + rankMap.get(Rank.second) + "개"
-                + "\n" + Rank.first.getComment() + " - " + rankMap.get(Rank.first) + "개"
-                + "\n" + calculateYield();
-    }
 
     private String calculateYield() {
         double receiveMoney = 0;
