@@ -18,7 +18,6 @@ public class LottoList {
 
         for (int i = 0; i < size; i++) {
             List<Integer> list = Randoms.pickUniqueNumbersInRange(1, 45, 6);
-            list.sort(Comparator.naturalOrder());
 
             Lotto lotto = new Lotto(list);
 
@@ -42,7 +41,7 @@ public class LottoList {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(lottoList.size()).append("개 구매하셨습니다.");
+        sb.append(lottoList.size()).append("개를 구매했습니다.");
 
         lottoList.stream().map(Lotto::getNumbers)
                 .forEach(integers -> sb.append("\n").append(integers));

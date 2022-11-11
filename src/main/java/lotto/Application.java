@@ -1,6 +1,7 @@
 package lotto;
 
 import camp.nextstep.edu.missionutils.Console;
+import lotto.domain.CompareLotto;
 import lotto.domain.Lotto;
 import lotto.domain.LottoList;
 
@@ -19,6 +20,11 @@ public class Application {
 
         Lotto lotto_1st = new Lotto(numbers);
 
-        System.out.println(lotto_1st.getNumbers());
+        System.out.println("보너스 번호를 입력해 주세요.");
+        int bonusNumbers = Integer.parseInt(Console.readLine());
+
+        CompareLotto compareLotto = new CompareLotto(lottoList, lotto_1st, bonusNumbers);
+        System.out.println(compareLotto);
+
     }
 }
