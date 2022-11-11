@@ -42,15 +42,15 @@ public class CompareLotto {
     }
 
     private void addRankMap(List<Integer> numbers, Lotto lotto_1st, int bonusNumbers) {
-
         Rank rank = Rank.etc;
 
         rank = rank.setRank(countEqualNumbers(numbers, lotto_1st), numbers.contains(bonusNumbers));
 
         int quantity = 0;
-        if (rankMap.containsKey(rank)) quantity = rankMap.get(rank);
-        rankMap.put(rank, quantity + 1);
 
+        if (rankMap.containsKey(rank)) quantity = rankMap.get(rank);
+
+        rankMap.put(rank, quantity + 1);
     }
 
     private int countEqualNumbers(List<Integer> numbers, Lotto lotto_1st) {
@@ -74,6 +74,7 @@ public class CompareLotto {
         }
 
         double totalYield = (receiveMoney / originalMoney) * 100;
+
         return "총 수익률은 " + totalYield + "%입니다.";
     }
 }

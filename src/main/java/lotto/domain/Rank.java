@@ -22,6 +22,7 @@ public enum Rank {
         if (count == 5) return Rank.third;
         if (count == 4) return Rank.fourth;
         if (count == 3) return Rank.fifth;
+
         return Rank.etc;
     }
 
