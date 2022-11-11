@@ -39,12 +39,10 @@ public class LottoLauncher {
     }
 
     private int castInt(String readLine) {
-
         try {
             return Integer.parseInt(readLine);
         }catch (NumberFormatException e){
             throw new IllegalArgumentException("[ERROR]");
         }
-
     }
 }

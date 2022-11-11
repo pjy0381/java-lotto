@@ -26,8 +26,7 @@ public class CompareLotto {
                 + "\n" + Rank.first.getComment() + " - " + rankMap.get(Rank.first) + "개"
                 + "\n" + calculateYield();
     }
-
-
+    
     private Map<Rank, Integer> createRankMap() {
         HashMap<Rank, Integer> rankMap = new HashMap<>();
 
@@ -64,7 +63,6 @@ public class CompareLotto {
 
         return count;
     }
-
 
     private String calculateYield() {
         double receiveMoney = 0;

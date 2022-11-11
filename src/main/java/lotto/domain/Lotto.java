@@ -26,7 +26,7 @@ public class Lotto {
         List<Integer> numbers = new ArrayList<>();
 
         Arrays.stream(StringNumbers.split(","))
-                .sorted().forEach(s -> numbers.add(Integer.parseInt(s)));
+                .sorted().forEach(s -> numbers.add(castInt(s)));
 
         validate(numbers);
 
@@ -35,5 +35,13 @@ public class Lotto {
 
     public List<Integer> getNumbers() {
         return numbers;
+    }
+
+    private int castInt(String readLine) {
+        try {
+            return Integer.parseInt(readLine);
+        }catch (NumberFormatException e){
+            throw new IllegalArgumentException("[ERROR]");
+        }
     }
 }
